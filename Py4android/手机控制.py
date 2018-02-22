@@ -1,6 +1,8 @@
 import os
 import re
 import tempfile
+import time
+import subprocess
 import xml.etree.cElementTree as ET
 from Events import event
 import Axis
@@ -85,9 +87,12 @@ class Pc(event.TouchEvent):
         info = self.run('devices')
         return info
     
-    def run(self,command):
-        ins = os.popen('adb {}'.format(command))
-        return ins.read()
+    def run(self,command,iter:bool=False):
+        # ins = os.popen('adb {}'.format(command))
+        # return ins.read()
+        ins = subprocess.Popen('adb {}'.format(command),shell=True,stdout=subprocess.PIPE)
+        return ins.stdout.read()
+
     
     def getTree(self):
         '''获取元素树'''
@@ -101,10 +106,17 @@ class Pc(event.TouchEvent):
 
 def main():
     android = Pc()
-    xy = android.findElement('领取红包',attr='text',update=True)
+    #android.click((530,1480),times=5)
+    #print('done')
+    #这个是微信领取红包，不过见鬼的是，单独传红包居然点击不成功
+    xy = android.findElement('红包',update=True)
+    print(xy)
     android.click(xy)
-    xy = android.findElement('android.widget.Button',update=True,attr="class")
-    android.click(xy)
+    # xy = android.findElement('android.widget.Button',update=True,attr="class")
+    # android.click(xy)
+    #android.getScreen()
+
+
     #android.up_slide()
     #android.down_slide()
     #android.left_slide()
