@@ -49,6 +49,11 @@ class T2spider(object):
         ls = []
         self.web.get(url)
         item = WebDriverWait(self.web,20).until(lambda driver:driver.find_elements_by_xpath('//div[@class="product-item-info"]/a'))
+        try:
+            self.next = self.web.find_element_by_xpath('//a[@class="c-pagination__next"]').get_attribute('href')
+        except Exception as e:
+            self.next = None
+
         if item:
             return map(lambda x:x.get_attribute('href'),item)
         else:
@@ -60,10 +65,14 @@ class T2spider(object):
         #time.sleep(20)
         #获取标题
         span = WebDriverWait(self.web,20).until(lambda driver:driver.find_element_by_xpath('//span[@class="base"]'))
-        imgs = WebDriverWait(self.web,20).until(lambda driver:driver.find_elements_by_xpath('//div[@class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img"]/img'))
+        try:
+            imgs = WebDriverWait(self.web,20).until(lambda driver:driver.find_elements_by_xpath('//div[@class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img"]/img'))
+        except Exception as e:
+            imgs = None
         
         #获取到所有的图片链接
-        ls.append(map(lambda x:x.get_attribute('src'),imgs))
+        if imgs:
+            ls.append(map(lambda x:x.get_attribute('src'),imgs))
 
         #span = self.web.find_element_by_xpath('//span[@class="base"]')
         ls.append(span.text)
@@ -79,11 +88,21 @@ class T2spider(object):
 
 if __name__ == '__main__':
     spider = T2spider()
-    item = spider.get_list('https://www.endclothing.com/row/clothing')
-    if item:
-        for i in item:
-            response = spider.get_data(i)
-            print response
+    #item = spider.get_list('https://www.endclothing.com/row/clothing')
 
+    
+    
+    def run(spider,start_url):
+        item = spider.get_list(start_url)
+        if item:
+            for i in item:
+                response = spider.get_data(i)
+                #print response
+                print len(response)
+        if spider.next:
+            print '下一页是：{}'.format(spider.next)
+            run(spider,spider.next)
+
+    run(spider,'https://www.endclothing.com/row/clothing')
 
 
