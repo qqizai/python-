@@ -1,29 +1,29 @@
-1519806305563	geckodriver	INFO	Listening on 127.0.0.1:49983
-1519806308567	mozprofile::profile	INFO	Using profile path C:\Users\ADMINI~1\AppData\Local\Temp\rust_mozprofile.tQlmWXjFJVbk
-1519806308570	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
-1519806308647	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49992
-1519806310042	Marionette	INFO	Enabled via --marionette
-1519806311738	Marionette	INFO	Listening on port 49992
+1519827444227	geckodriver	INFO	Listening on 127.0.0.1:54502
+1519827447119	mozprofile::profile	INFO	Using profile path C:\Users\ADMINI~1\AppData\Local\Temp\rust_mozprofile.bF0fEwVb4jbW
+1519827447124	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1519827447238	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54514
+1519827448693	Marionette	INFO	Enabled via --marionette
+1519827451575	Marionette	INFO	Listening on port 54514
 Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: js/responsive
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: mage/translate-inline
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: mage/dataPost
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: jquery/jquery.mobile.custom
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: js/theme
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: jquery/jquery.cookie
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: mage/translate
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: jquery
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: mage/bootstrap
-http://requirejs.org/docs/errors.html#scripterror
-JavaScript error: https://js.endclothing.com/static/version1517988984/frontend/Endclothing/base/en_GB/Magento_Customer/js/customer-data.min.js, line 1: Error: [object Object]
+[Child 10248, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1519827518631	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
+[Child 10420, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1519827518648	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1519827518649	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 7912, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
+[Child 5280, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5280, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+JavaScript error: jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+Unable to read VR Path Registry from C:\Users\Administrator\AppData\Local\openvr\openvrpaths.vrpath
+[GPU 10192, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+/Magento_Customer/js/customer-data.min.js, line 1: Error: [object Object]
 JavaScript error: , line 0: uncaught exception: [object ProgressEvent]
 8984/frontend/Endclothing/base/en_GB/requirejs/require.min.js, line 16: Error: Script error for: Endclothing_Country/js/countryRate
 http://requirejs.org/docs/errors.html#scripterror
