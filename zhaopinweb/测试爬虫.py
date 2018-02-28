@@ -58,22 +58,19 @@ class T2spider(object):
         ls = []
         self.web.get(url)
         #time.sleep(20)
+        #获取标题
         span = WebDriverWait(self.web,20).until(lambda driver:driver.find_element_by_xpath('//span[@class="base"]'))
         imgs = WebDriverWait(self.web,20).until(lambda driver:driver.find_elements_by_xpath('//div[@class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img"]/img'))
         
-        #print imgs
-        #print imgs[0].get_attribute('src')
-        # if span or imgs:
-        #     print 'Yes'
-        #     print span.text
-        #     print imgs
-        # else:
-        #     print u'None 未找到数据'
+        #获取到所有的图片链接
         ls.append(map(lambda x:x.get_attribute('src'),imgs))
+
         #span = self.web.find_element_by_xpath('//span[@class="base"]')
         ls.append(span.text)
+        #获取价格
         price = self.web.find_element_by_xpath('//span[@class="price"]')
         ls.append(price.text)
+        #获取标题之下的副标题和简介
         desc = self.web.find_elements_by_xpath('//div[@class="value"]')
         ls.extend(map(lambda x:x.text,desc))
 
