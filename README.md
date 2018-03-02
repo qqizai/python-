@@ -1,4 +1,12 @@
 # 我的Python学习记录仓库
+我的技术栈
+===
+> * Javascript
+> * Vue.js
+> * 运维
+> * Python开发
+
+
 关于我学习的内容
 ===
 > * Python Web方面
