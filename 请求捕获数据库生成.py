@@ -8,10 +8,11 @@ import flask_cors
 
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.exc import InvalidRequestError
 from sqlalchemy.orm import sessionmaker
 
 
-# engine = create_engine('mysql+pymysql://root:root@xxx.xxx.xxx.xxx/test?charset=utf8')
+# engine = create_engine('mysql+pymysql://root:root@193.112.75.62/test?charset=utf8')
 
 
 
@@ -55,16 +56,20 @@ class MakeSqlServer(object):
     def handle_reqeust(self):
         req_data = request.json or request.form or request.data
         table = self.createTable(request.path[1:],*list(req_data.keys()),**request.args)
-        # print(dir(request))
+        print(table.name)
         print(request.args)
         try:
             table.create()
             return 'true'
         except sqlalchemy.exc.InternalError as e:
             print(e)
+            self.conn.execute('drop table {tablename}'.format(tablename=table.name))
+            table.create()
             return str(e)
-        except sqlalchemy.exc.InvalidRequestError as e:
+        except InvalidRequestError as e:
             print(e)
+            self.conn.execute('drop table {tablename}'.format(tablename=table.name))
+            table.create()
             return (str(e))
 
 
